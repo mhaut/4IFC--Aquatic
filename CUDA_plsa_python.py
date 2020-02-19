@@ -92,7 +92,7 @@ if args.pca_comp != None:
 initGPU()
 
 (abundances, endmembers, time) = pLSA(lamda, theta, p, X, denominators, shape_image, N, M, K, maxIteration2, r1, r2)
-print("CUDA VERSION: Epochs", maxIteration2, "Time per epoch", time/maxIteration2, "Total time", time)
+print("CUDA VERSION: Epochs", maxIteration2, "Time per epoch", np.round(time/maxIteration2, 2), "Total time", np.round(time, 2))
 
 
 

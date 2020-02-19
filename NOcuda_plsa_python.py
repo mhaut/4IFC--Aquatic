@@ -70,7 +70,7 @@ def LogLikelihood(): # calcular  log likelihood del modelo
 ##########################     PARAMETROS      #########################################
 ########################################################################################
 K = 4    # numero de endmembers
-maxIteration = 2000
+maxIteration = 1
 threshold = 10e-6
 step2show = 1
 step2save = 10
@@ -108,10 +108,11 @@ for i in range(0, K):
         theta[i, j] /= normalization
 
 total_time = 0
-for i in range(100):
+for i in range(maxIteration):
     tic = time.time()
     EStep()
     MStep()
     toc = time.time()
     total_time += (toc - tic)
-    print("Epoch", i, "Time epoch", toc-tic, "Total time", total_time)
+    print("Epoch", i, "Time epoch", np.round(toc-tic, 2), "Expected time", np.round((toc-tic)*100, 2))
+    print("CUDA Version is", np.round((toc-tic)/0.01, 2), "more faster")
