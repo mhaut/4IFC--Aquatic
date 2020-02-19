@@ -114,5 +114,5 @@ for i in range(maxIteration):
     MStep()
     toc = time.time()
     total_time += (toc - tic)
-    print("Epoch", i, "Time epoch", np.round(toc-tic, 2), "Expected time", np.round((toc-tic)*100, 2))
+    print("CPU VERSION: Time epoch", np.round(toc-tic, 2), "Expected time", np.round((toc-tic)*100, 2))
     print("CUDA Version is", np.round((toc-tic)/0.01, 2), "more faster")
