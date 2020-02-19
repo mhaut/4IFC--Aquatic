@@ -27,5 +27,3 @@ unzip -qq inputs/samson_gt.zip
 mv GroundTruth/end3.mat groundtruths/samson_gt.mat
 rm -r GroundTruth/ inputs/*.zip
 
-
-python mat2npz.py
